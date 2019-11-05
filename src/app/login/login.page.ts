@@ -22,7 +22,7 @@ export class LoginPage implements OnInit {
 
   signIn() {
     if (this.loginForm.valid) {
-      this.router.navigate([]);
+      this.router.navigate(['home']);
     }
   }
 
