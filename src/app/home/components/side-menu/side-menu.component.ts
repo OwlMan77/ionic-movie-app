@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-side-menu',
@@ -7,8 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideMenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private menu: MenuController
+  ) { }
 
   ngOnInit() {}
+
+  public logOut() {
+    this.menu.close('side-menu').then(() => {
+      this.router.navigate(['login']);
+    });
+  }
 
 }

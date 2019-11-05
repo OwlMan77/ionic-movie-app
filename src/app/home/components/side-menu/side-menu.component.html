@@ -1,28 +1,33 @@
-<ion-menu side="start" menuId="first" content-id="main">
+<ion-menu side="start" menuId="side-menu" content-id="main">
     <ion-content class="ion-justify-content-center">
-      <ion-grid>
+      <ion-grid class="grid">
+        <ion-row class="ion-justify-content-center">
+            <ion-col size="4">
+              <ion-avatar class="avatar"><img src="https://www.fillmurray.com/200/200"/></ion-avatar>
+            </ion-col>
+        </ion-row>
         <ion-row class="ion-justify-content-center">
           <ion-col size="8">
             <ion-list lines="none"> 
-                <ion-item>
+                <ion-item class="menu-item">
                   <ion-label>
                       Dashboard
                   </ion-label>
                   <ion-icon slot="start" name="film"></ion-icon>
                 </ion-item>
-                <ion-item>
+                <ion-item class="menu-item">
                     <ion-label>
                         Dashboard
                     </ion-label>
                     <ion-icon slot="start" name="film"></ion-icon>
                   </ion-item>
-                  <ion-item>
+                  <ion-item class="menu-item"> 
                       <ion-label>
                           Dashboard
                       </ion-label>
                       <ion-icon slot="start" name="film"></ion-icon>
                     </ion-item>
-                    <ion-item>
+                    <ion-item class="menu-item">
                         <ion-label>
                             Dashboard
                         </ion-label>
@@ -30,7 +35,12 @@
                     </ion-item>
               </ion-list>
             </ion-col>
-          </ion-row>
+        </ion-row>
+        <ion-row class="ion-justify-content-center">
+          <ion-col size="1">
+            <ion-icon (click)="logOut()" class="power-button" name="power"></ion-icon>
+          </ion-col>
+        </ion-row>
       </ion-grid>
 
     </ion-content>

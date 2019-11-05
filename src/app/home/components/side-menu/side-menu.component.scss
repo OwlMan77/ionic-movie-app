@@ -1,0 +1,20 @@
+.grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.avatar {
+    border-radius: 10%;
+    width: 100px;
+    height: 100px;
+}
+
+.menu-item {
+    font-size: 18px;
+}
+
+.power-button {
+    font-size: 30px;
+}

@@ -13,6 +13,6 @@ export class HomePage {
   ) {}
 
   toggleMenu(){
-    this.menu.toggle('first');
+    this.menu.toggle('side-menu');
   }
 }

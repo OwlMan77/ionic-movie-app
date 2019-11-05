@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  loginForm: FormGroup;
+  public loginForm: FormGroup;
 
   constructor(private fb: FormBuilder, private router: Router) {  
     this.loginForm = this.fb.group({
