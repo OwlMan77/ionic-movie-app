@@ -7,17 +7,17 @@
   </ion-row>
   <ion-row>
     <ion-col class="ion-justify-content-around">
-        <form class="login-information ion-justify-content-around">
-            <ion-item>
-              <ion-label>Email</ion-label>
-              <ion-input type="email"></ion-input>
-              <ion-icon name="mail" slot="start"></ion-icon>
-            </ion-item>
-            <ion-item>
-              <ion-label>Password</ion-label>
-              <ion-input type="password"></ion-input>
-              <ion-icon name="lock" slot="start"></ion-icon>
-            </ion-item>
+        <form [formGroup]="loginForm" class="login-information ion-justify-content-around">
+          <ion-item>
+            <ion-label>Email</ion-label>
+            <ion-input formControlName="email" type="email"></ion-input>
+            <ion-icon name="mail" slot="start"></ion-icon>
+          </ion-item>
+          <ion-item>
+            <ion-label>Password</ion-label>
+            <ion-input formControlName="password" type="password"></ion-input>
+            <ion-icon name="lock" slot="start"></ion-icon>
+          </ion-item>
         </form>
     </ion-col>
   </ion-row>
@@ -33,6 +33,6 @@
   </ion-row>
   <ion-row class="action-buttons ion-justify-content-around">
       <ion-button shape="round" color="dark" fill="outline" disabled="true"> Sign Up</ion-button>
-      <ion-button shape="round" color="dark"> Sign In</ion-button>
+      <ion-button (click)="signIn()" [disabled]="!loginForm.valid" shape="round" color="dark"> Sign In</ion-button>
   </ion-row>
 </ion-grid>
