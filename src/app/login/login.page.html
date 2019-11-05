@@ -1,9 +1,23 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content>
-
+<ion-content class="login-page">
+  <ion-col class="ion-justify-content-around">
+    <ion-img></ion-img>
+    <form class="login-information ion-justify-content-around">
+        <ion-item>
+          <ion-label>Email</ion-label>
+          <ion-input type="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Password</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+    </form>
+    <ion-row class="action-buttons ion-justify-content-around">
+      <ion-col>
+        <ion-button> Sign Up</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button> Sign In</ion-button>
+      </ion-col>
+    </ion-row>
 </ion-content>
