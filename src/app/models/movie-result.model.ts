@@ -2,7 +2,7 @@ export interface MovieResult {
     poster_path: string;
     adult: boolean;
     overview: string;
-    releaseDate: string;
+    release_date: string;
     genre_ids: number[];
     id: number;
     original_title: string;
