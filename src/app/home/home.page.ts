@@ -18,13 +18,24 @@ export class HomePage implements OnInit {
 
   }
 
+  private formatDate(date: string) {
+    const arr = date.split('-');
+    return `${arr[2]}/${arr[1]}/${arr[0]}`;
+  }
+
   ngOnInit() {
     this.apiService.getMoviesFromThisYear().subscribe((data) => {
-      this.movies = data;
+      this.movies = data.map((movie) => {  
+        return {
+          ...movie,
+          release_date: this.formatDate(movie.release_date),
+          poster_path: `https://image.tmdb.org/t/p/w300${movie.poster_path}`
+      } });
     })
   }
 
-  toggleMenu(){
+  public toggleMenu(){
     this.menu.toggle('side-menu');
   }
+
 }
