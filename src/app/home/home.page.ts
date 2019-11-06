@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { MenuController, ModalController } from '@ionic/angular';
 import { MovieResult } from '../models/movie-result.model';
 import { ApiService } from '../services/api.service';
+import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 
 @Component({
   selector: 'app-home',
@@ -14,6 +15,7 @@ export class HomePage implements OnInit {
   constructor(
     private menu: MenuController,
     private apiService: ApiService,
+    private modalController: ModalController,
   ) {
 
   }
@@ -29,13 +31,24 @@ export class HomePage implements OnInit {
         return {
           ...movie,
           release_date: this.formatDate(movie.release_date),
-          poster_path: `https://image.tmdb.org/t/p/w300${movie.poster_path}`
+          poster_path: `https://image.tmdb.org/t/p/w300${movie.poster_path}`,
+          backdrop_path: `https://image.tmdb.org/t/p/w300${movie.backdrop_path}`
       } });
     })
   }
 
   public toggleMenu(){
     this.menu.toggle('side-menu');
+  }
+
+  async presentMovieDetailModal(movieDetails: MovieResult) {
+    const modal = await this.modalController.create({
+      component: MovieDetailComponent,
+      componentProps: {
+        movieDetails
+      }
+    });
+    return await modal.present();
   }
 
 }

@@ -10,7 +10,7 @@
 </ion-header>
 
 <ion-content *ngIf="movies">
-    <ion-card *ngFor="let movie of movies ">
+    <ion-card *ngFor="let movie of movies" (click)="presentMovieDetailModal(movie)">
         <ion-card-header>
           <ion-card-title>{{ movie?.title }}</ion-card-title>
           <ion-card-subtitle> Release Date: {{ movie?.release_date }}</ion-card-subtitle>

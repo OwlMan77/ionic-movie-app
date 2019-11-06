@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button (click)="dismissModal()">
+            <ion-icon slot="start" name="arrow-dropleft-circle"></ion-icon>
+            Go Back
+          </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-grid>
+    <ion-row class="ion-justify-content-center">
+        <ion-col size="12">
+            <ion-title class="title">{{ movieDetails.title}}</ion-title>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-justify-content-center">
+          <ion-col size="10">
+              <img [src]="movieDetails.backdrop_path">
+          </ion-col>
+        </ion-row>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="10">
+        <span class="bold">Description:</span>
+          {{ movieDetails.overview }}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
